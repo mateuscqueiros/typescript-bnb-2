@@ -7,6 +7,7 @@
     "strict": true,
     "skipLibCheck": true,
     "outDir": "javascript/",
-    "rootDir": "typescript/"
+    "rootDir": "typescript/",
+    "noImplicitAny": false
   }
 }
