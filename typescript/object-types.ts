@@ -164,7 +164,11 @@ interface SolarEclipse {
   [latitude: string]: boolean;
 }
 
-function getResult() {
+interface Budget {
+  [item: string]: number;
+}
+
+function getResult(): Budget {
   return {
     '1.shopping': 150,
     '2.food': 210,
@@ -173,8 +177,52 @@ function getResult() {
 }
 
 function getBudget() {
-  const result = getResult();
+  const result: Budget = getResult();
   console.log(result);
 }
 
 getBudget();
+
+/**
+ * Membros opcionais
+ */
+
+interface OptionsType {
+  name: string;
+  size?: string;
+}
+
+function listFile(options: OptionsType) {
+  let fileName = options.name;
+
+  if (options.size) {
+    fileName = `${fileName}: ${options.size}`;
+  }
+
+  return fileName;
+}
+
+interface UserNameOptions {
+  firstName?: string;
+  lastName?: string;
+  userName: string;
+}
+
+function getUserName(options: UserNameOptions) {
+  if (options.firstName && options.lastName) {
+    return console.log(`${options.firstName} ${options.lastName}`);
+  }
+
+  return console.log(options.userName);
+}
+
+getUserName({
+  firstName: 'Mr.',
+  lastName: 'Oshiro',
+  userName: 'hotelowner304',
+});
+
+getUserName({
+  firstName: 'Madeline',
+  userName: 'mountainClimber',
+});

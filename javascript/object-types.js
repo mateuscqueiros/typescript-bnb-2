@@ -63,3 +63,25 @@ function getBudget() {
     console.log(result);
 }
 getBudget();
+function listFile(options) {
+    let fileName = options.name;
+    if (options.size) {
+        fileName = `${fileName}: ${options.size}`;
+    }
+    return fileName;
+}
+function getUserName(options) {
+    if (options.firstName && options.lastName) {
+        return console.log(`${options.firstName} ${options.lastName}`);
+    }
+    return console.log(options.userName);
+}
+getUserName({
+    firstName: 'Mr.',
+    lastName: 'Oshiro',
+    userName: 'hotelowner304',
+});
+getUserName({
+    firstName: 'Madeline',
+    userName: 'mountainClimber',
+});
